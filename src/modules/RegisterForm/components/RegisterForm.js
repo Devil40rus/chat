@@ -5,13 +5,13 @@ import { Link } from "react-router-dom";
 import Button from '../../../components/Button';
 import Block from '../../../components/Block';
 
-class LoginForm extends Component {
+class RegisterForm extends Component {
     render() {
         return (
             <div>
                 <div className="auth__top">
-                    <h2>Войти в аккаунт</h2>
-                    <p>Пожалуйста, войдите в свой аккаунт</p>
+                    <h2>Регистрация</h2>
+                    <p>Для входа в чат, вам нужно зарегистрироваться</p>
                 </div>
                 <Block>
                     <Form onSubmit={this.handleSubmit} className="login-form">
@@ -35,12 +35,22 @@ class LoginForm extends Component {
                             />
                         </Form.Item>
                         <Form.Item>
+                            <Input
+                                prefix={
+                                    <Icon type="lock" style={{ color: 'rgba(0,0,0,.25)' }} />
+                                }
+                                size="large"
+                                type="password"
+                                placeholder="Повторите пароль"
+                            />
+                        </Form.Item>
+                        <Form.Item>
                             <Button type="primary" size="large">
-                                Войти в аккаунт
+                                Зарегистрироваться
                             </Button>
                         </Form.Item>
-                        <Link className="auth_register-link" to="/register">
-                            Зарегистрироваться
+                        <Link className="auth_register-link" to="/login">
+                            Войти в аккаунт
                         </Link>
                     </Form>
                 </Block>
@@ -49,4 +59,4 @@ class LoginForm extends Component {
     }
 }
 
-export default LoginForm;
+export default RegisterForm;
